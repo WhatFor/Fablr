@@ -1,27 +1,26 @@
-# Create T3 App
+# Fablr
 
-This is an app bootstrapped according to the [init.tips](https://init.tips) stack, also known as the T3-Stack.
+### Stack
 
-## What's next? How do I make an app with this?
+ - [next.js](https://github.com/vercel/next.js/)
+ - [NextAuth](https://next-auth.js.org/getting-started/introduction)
+ - [Tailwind](https://tailwindcss.com/)
+ - [Prisma](https://github.com/prisma/prisma)
+ - [Zod](https://github.com/colinhacks/zod)
 
-We try to keep this project as simple as possible, so you can start with the most basic configuration and then move on to more advanced configuration.
+### Serverless Infra
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+ - [Vercel](https://vercel.com/)
+ - [PlanetScale](https://planetscale.com/)
+ - [Auth0](https://auth0.com/)
 
-- [Next-Auth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [TailwindCSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
 
-We also [roll our own docs](https://beta.create.t3.gg) with some summary information and links to the respective documentation.
+### References
 
-Also checkout these awesome tutorials on `create-t3-app`.
+ - https://nextjs.org/blog/next-13
+ - https://planetscale.com/blog/how-to-setup-next-js-with-prisma-and-planetscale
+ - https://giancarlobuomprisco.com/next/protect-next-api-zod
+ - https://dev.to/johannesmogashoa/setup-project-with-nextjs-prisma-trpc-nextauth-4df1
 
-- [Build a Blog With the T3 Stack - tRPC, TypeScript, Next.js, Prisma & Zod](https://www.youtube.com/watch?v=syEWlxVFUrY)
-- [Build a Live Chat Application with the T3 Stack - TypeScript, Tailwind, tRPC](https://www.youtube.com/watch?v=dXRRY37MPuk)
-- [Build a full stack app with create-t3-app](https://www.nexxel.dev/blog/ct3a-guestbook)
-- [A first look at create-t3-app](https://dev.to/ajcwebdev/a-first-look-at-create-t3-app-1i8f)
-
-## How do I deploy this?
-
-Follow our deployment guides for [Vercel](https://beta.create.t3.gg/en/deployment/vercel) and [Docker](https://beta.create.t3.gg/en/deployment/docker) for more information.
+### Commands
+ - Prisma Migrate: `npx prisma migrate dev`
