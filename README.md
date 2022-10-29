@@ -22,5 +22,8 @@
  - https://giancarlobuomprisco.com/next/protect-next-api-zod
  - https://dev.to/johannesmogashoa/setup-project-with-nextjs-prisma-trpc-nextauth-4df1
 
+ ### Useful Links
+ - https://davidparks.dev/blog/planetscale-deployment-with-prisma/
+
 ### Commands
  - Prisma Migrate: `npx prisma migrate dev`
