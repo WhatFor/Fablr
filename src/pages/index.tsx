@@ -1,12 +1,9 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 import { signIn, signOut, useSession } from "next-auth/react";
-
-import { trpc } from "../utils/trpc";
+import { trpc } from "utils/trpc";
 
 const Home: NextPage = () => {
-  const hello = trpc.example.hello.useQuery({ text: "from tRPC" });
-
   return (
     <>
       <Head>
@@ -14,10 +11,7 @@ const Home: NextPage = () => {
         <meta name="description" content="Text-based game maker, Fablr" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="container mx-auto flex min-h-screen flex-col items-center justify-center p-4 bg-black">
-        <div className="flex w-full items-center justify-center pt-6 text-2xl text-white">
-          {hello.data ? <p>{hello.data.greeting}</p> : <p>Loading..</p>}
-        </div>
+      <main className="container mx-auto flex min-h-screen flex-col items-center justify-center p-4">
         <AuthShowcase />
       </main>
     </>
@@ -34,16 +28,16 @@ const AuthShowcase: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center gap-2">
       {sessionData && (
-        <p className="text-2xl text-white">
+        <p className="text-2xl">
           Logged in as {sessionData?.user?.name}
         </p>
       )}
       {secretMessage && (
-        <p className="text-2xl text-white">{secretMessage}</p>
+        <p className="text-xl">{secretMessage}</p>
       )}
       <button
         className="rounded-md border border-black bg-violet-50 px-4 py-2 text-xl shadow-lg hover:bg-violet-100"
-        onClick={sessionData ? () => signOut() : () => signIn()}
+        onClick={sessionData ? () => signOut() : () => signIn("auth0")}
       >
         {sessionData ? "Sign out" : "Sign in"}
       </button>

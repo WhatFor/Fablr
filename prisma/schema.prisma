@@ -9,10 +9,77 @@ datasource db {
   referentialIntegrity = "prisma"
 }
 
-model Example {
-  id        String   @id @default(cuid())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+model Game {
+  id          String @id @default(cuid())
+  authorId    String
+  name        String
+  description String
+  isPublic    Boolean @default(false)
+
+  dateCreated DateTime @default(now())
+  dateDeleted DateTime?
+
+  author      User @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  nodes       Node[]
+  ratings     GameRating[]
+  records     GameRecord[]
+}
+
+model GameRating {
+  id          String @id @default(cuid())
+  gameId      String
+  playerId    String
+  rating      Int @db.UnsignedTinyInt
+
+  dateCreated DateTime @default(now())
+  dateDeleted DateTime?
+
+  game        Game @relation(fields: [gameId], references: [id], onDelete: Cascade)
+  player      User @relation(fields: [playerId], references: [id], onDelete: Cascade)
+}
+
+model GameRecord {
+  id          String @id @default(cuid())
+  gameId      String
+  playerId    String
+  result      GameRecordResult
+  
+  dateCreated DateTime @default(now())
+  dateDeleted DateTime?
+
+  game        Game @relation(fields: [gameId], references: [id], onDelete: Cascade)
+  player      User @relation(fields: [playerId], references: [id], onDelete: Cascade)
+}
+
+enum GameRecordResult {
+  Win
+  Lose
+}
+
+model Node {
+  id                  String @id @default(cuid())
+  parentNodeId        String?
+  gameId              String
+  type                NodeType
+  parentNodeLinkText  String
+  titleText           String
+  bodyText            String
+  editorPositionX     Int
+  editorPositionY     Int
+
+  dateCreated         DateTime @default(now())
+  dateDeleted         DateTime?
+
+  game                Game @relation(fields: [gameId], references: [id], onDelete: Cascade)
+  parentNode          Node? @relation(fields: [parentNodeId], references: [id], onDelete: NoAction, onUpdate: NoAction, name: "parent-child-node")
+  children            Node[] @relation(name: "parent-child-node")
+}
+
+enum NodeType {
+  Start
+  Standard
+  Lose
+  Win
 }
 
 // Necessary for Next auth
@@ -50,6 +117,9 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+  games         Game[]
+  ratings       GameRating[]
+  records       GameRecord[]
 }
 
 model VerificationToken {

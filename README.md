@@ -26,4 +26,5 @@
  - https://davidparks.dev/blog/planetscale-deployment-with-prisma/
 
 ### Commands
- - Prisma Migrate: `npx prisma migrate dev`
+ - Prisma Add Migration: `npx prisma migrate dev`
+ - Prisma Apply Migration: `npx prisma db push`

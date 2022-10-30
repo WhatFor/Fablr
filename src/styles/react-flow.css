@@ -1,0 +1,162 @@
+/*  Outer container */
+.react-flow {
+    height: 100%;
+} 
+
+/* React flow Wrapper */
+.reactflow-wrapper {
+    height: 100%;
+}
+
+/* Inner container */
+.react-flow__renderer {
+} 
+
+/* Zoom & pan pane */
+.react-flow__zoompane {
+} 
+
+/* Selection pane */
+.react-flow__selectionpane {
+} 
+
+/* User selection */
+.react-flow__selection {
+} 
+
+/* Edges wrapper */
+.react-flow__edges {
+} 
+
+/* Edge element */
+.react-flow__edge {
+} 
+
+/* Selected Edge element */
+.react-flow__edge.selected {
+} 
+
+/* Animated Edge element */
+.react-flow__edge.animated {
+} 
+
+/* Edge element path */
+.react-flow__edge-path {
+} 
+
+/* Edge text */
+.react-flow__edge-text {
+} 
+
+/* Edge text background */
+.react-flow__edge-textbg {
+} 
+
+/* Connection line */
+.react-flow__connection {
+} 
+
+/* Connection line path */
+.react-flow__connection-path {
+} 
+
+/* Nodes wrapper */
+.react-flow__nodes {
+} 
+
+/* Node element */
+.react-flow__node {
+    width: auto;
+    max-width: 500px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 0;
+    border-radius: 0px;
+    border-width: 4px !important;
+    border-color: white !important;
+    background-color: black;
+    color: white;
+    font-family: "pixel_droid_console";
+    font-size: 3rem;
+    text-transform: uppercase;
+} 
+
+/* Selected Node element */
+.react-flow__node.selected {
+    border-color: #B91C1C;
+    box-shadow: none;
+}
+
+/* Selected, Hover Node element */
+.react-flow__node.selected:hover {
+    box-shadow: none;
+}
+
+/* Node default */
+.react-flow__node-default {
+}
+
+/* Node input */
+.react-flow__node-input {
+} 
+
+/* Node output */
+.react-flow__node-output {
+} 
+
+/* Node output, hover */
+.react-flow__node-output:hover {
+    box-shadow: none;
+} 
+
+/* Nodes selection */
+.react-flow__nodesselection {
+} 
+/* Nodes selection rect */
+.react-flow__nodesselection-rect {
+} 
+
+/* Handle component */
+.react-flow__handle {
+    width: 48px;
+    height: 24px;
+    border-radius: 0px;
+    border-width: 4px;
+    border-color: white;
+} 
+
+.react-flow__node-input .react-flow__handle {
+    background-color: #059669;
+}
+
+.react-flow__node-output .react-flow__handle {
+    background-color: #B91C1C;
+}
+
+/* bottom is added when position = 'bottom' */
+.react-flow__handle-bottom {
+} 
+
+/* top is added when position = 'top' */
+.react-flow__handle-top {
+} 
+
+/* left is added when position = 'left' */
+.react-flow__handle-left {
+} 
+
+/* right is added when position = 'right' */
+.react-flow__handle-right {
+} 
+
+/* connecting is added when connection line is above a handle */
+.react-flow__handle-connecting {
+} 
+
+/* valid is added when connection line is above a handle and the connection is valid */
+.react-flow__handle-valid {
+} 
+
+/* Background component */
+.react-flow__background {
+} 

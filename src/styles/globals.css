@@ -1,3 +1,64 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import "./tailwind/overrides.css";
+@import "./react-flow.css";
+
+@font-face {
+    font-family: "pixel_droid_console";
+    src: local('Console'), url(../../public/fonts/pixel_droid_console.otf) format('opentype');
+}
+
+html {
+  background-color: black;
+}
+
+:root {
+    --toastify-color-light: #000;
+    --toastify-color-dark: #000;
+    --toastify-color-info: #000;
+    --toastify-color-success: #15803d !important;
+    --toastify-color-warning: #F59E0B;
+    --toastify-color-error: #DC2626;
+    --toastify-color-transparent: rgba(255, 255, 255, 0.7);
+  
+    --toastify-icon-color-info: var(--toastify-color-info);
+    --toastify-icon-color-success: var(--toastify-color-success);
+    --toastify-icon-color-warning: var(--toastify-color-warning);
+    --toastify-icon-color-error: var(--toastify-color-error);
+  
+    --toastify-toast-width: 320px;
+    --toastify-toast-background: #fff;
+    --toastify-toast-min-height: 64px;
+    --toastify-toast-max-height: 800px;
+    --toastify-font-family: sans-serif;
+    --toastify-z-index: 9999;
+  
+    --toastify-text-color-light: #fff;
+    --toastify-text-color-dark: #fff;
+  }
+
+  .Toastify__toast {
+    border-radius: 0px !important;
+    border-width: 4px;
+    border-color: white;
+  }
+
+  .Toastify__toast-container {
+    top: 28px;
+    right: 28px;
+  }
+
+  .Toastify__toast--success {
+    color: var(--toastify-color-success);
+    border-color: var(--toastify-color-success);
+  }
+  .Toastify__toast--warning {
+    color: var(--toastify-color-warning);
+    border-color: var(--toastify-color-warning);
+  }
+  .Toastify__toast--error {
+    color: var(--toastify-color-error);
+    border-color: var(--toastify-color-error);
+  }
